@@ -12,9 +12,43 @@
     <link rel="stylesheet" href="./src/styles/index.css" />
 
     <!-- SCRIPTS  -->
+    <script src="https://kit.fontawesome.com/1d585ba1df.js" crossorigin="anonymous" defer></script>
+    <script src="./src/scripts/productsData.js" defer></script>
+    <script type="module" src="./src/scripts/index.js" defer></script>
+    <script type="module" src="./src/scripts/theme.js" defer></script>
   </head>
-  <body>
-    <header></header>
-    <main></main>
+  <body class="body light-mode">
+
+    <header class="header light-mode">
+      <h1 class="header__logo light-mode">Open Music</h1>
+      <button class="header__dark-mode-button light-mode">
+        <img class="header__img-logo light-mode" src="./src/assets/img/night.png" alt="day_button">
+      </button>
+    </header>
+
+    <main class="main light-mode">
+      <section class="filter_section light-mode">
+        <div class="filter-section__genre light-mode">
+          <h2 class="filter-section__title light-mode">Gênero Musical</h2>
+          <ul class="filter-section__genre-list light-mode"></ul>
+        </div>
+
+        <div class="filter-section__price-container light-mode">
+          <h2 class="filter-section__subtitle light-mode">Definir Preço</h2>
+          <p class="filter-section__price-text light-mode">Até R$: 00.00</p>
+          <div class="filter-section__price-range-container">
+            <input type="range" max="100" value="0" class="filter-section__price-range" />
+          </div>          
+        </div>
+      </section>
+
+      <section class="album-section light-mode">
+        <h2 class="album-section__title light-mode">Álbuns Encontrados</h2>
+        <ul class="album-section__album-cards light-mode"></ul>
+      </section>
+
+    </main>
+
   </body>
+
 </html>
