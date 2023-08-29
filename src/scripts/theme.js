@@ -30,11 +30,6 @@ const adjustElements = () => {
   logoImage.src = body.classList.contains("dark-mode")
     ? "./src/assets/img/day.png"
     : "./src/assets/img/night.png";
-
-  localStorage.setItem(
-    "theme",
-    body.classList.contains("dark-mode") ? "dark" : "light"
-  );
 };
 
 const enableDarkMode = () => {
@@ -42,7 +37,7 @@ const enableDarkMode = () => {
   body.classList.remove("light-mode");
   adjustElements();
   logoImage.src = "./src/assets/img/day.png";
-  localStorage.setItem("theme", "dark");
+  localStorage.setItem("darkMode", true);
 };
 
 const enableLightMode = () => {
@@ -50,7 +45,7 @@ const enableLightMode = () => {
   body.classList.remove("dark-mode");
   adjustElements();
   logoImage.src = "./src/assets/img/night.png";
-  localStorage.setItem("theme", "light");
+  localStorage.setItem("darkMode", false);
 };
 
 const toggleTheme = () => {
@@ -59,19 +54,19 @@ const toggleTheme = () => {
   } else {
     enableDarkMode();
   }
-};
+}
 
 // Carregar o tema salvo do LocalStorage ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      enableDarkMode();
-    } else {
-      enableLightMode();
-    }
-    adjustElements(); 
-  });
+  const savedTheme = localStorage.getItem("darkMode");
+  if (savedTheme === "false") {
+    enableLightMode();
+  } else {
+    enableDarkMode();
+  }
+  adjustElements();
+});
 
-  darkModeButton.addEventListener("click", toggleTheme);
+darkModeButton.addEventListener("click", toggleTheme);
 
 export default toggleTheme;

@@ -83,8 +83,6 @@ const renderFilterButtons = (categories) => {
 
 renderFilterButtons(categories);
 
-import toggleTheme from "./theme.js";
-
 const toggleButton = document.querySelector(".header__dark-mode-button");
 
 toggleButton.addEventListener("click", toggleTheme);
@@ -161,4 +159,3 @@ genreButtons.forEach((button) => {
 
 
 updatePriceText();
-toggleTheme();
