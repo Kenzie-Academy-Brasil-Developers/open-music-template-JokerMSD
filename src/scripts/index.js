@@ -84,7 +84,7 @@ const renderFilterButtons = (categories) => {
 renderFilterButtons(categories);
 
 const toggleButton = document.querySelector(".header__dark-mode-button");
-
+import toggleTheme from "./theme.js"
 toggleButton.addEventListener("click", toggleTheme);
 
 const priceRangeInput = document.querySelector(".filter-section__price-range");
